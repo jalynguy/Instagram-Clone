@@ -47,12 +47,24 @@ const contentData =
     }
 ];
 
+// Shuffles array to provide a sense of randomness
+// when a page loads so that the feed is not always
+// the same.
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
 // Dymamically Create Content for page via the JSON data
 // stored up above. Uses JQuery
 function createContent(){
     let container = $('.main-content');
-    $.each(contentData, function(index, item){
+    let shuffleContent = shuffle(contentData);
+    $.each(shuffleContent, function(index, item){
         let div = $("<div>").addClass("content-element");
         if(item.verified == true){
             div.append(`<h4> <img src="${item.userimg}" alt="profileimg.jpg" class="profileImage"> ${item.username} <i class="bi bi-patch-check-fill text-verified"></i> </h4>`);
