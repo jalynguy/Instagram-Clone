@@ -75,7 +75,7 @@ function createContent(){
         else{
             div.append(`<h4> <img src="${item.userimg}" alt="profileimg.jpg" class="profileImage"> ${item.username} </h4>`);
         }
-        div.append(`<img src="${item.imgSrc}" alt="image">`);
+        div.append(`<img src="${item.imgSrc}" alt="image" class="postImage">`);
         div.append(`
             <div class='action-bar'>
                 <div class="action-items-1"> 
@@ -88,11 +88,16 @@ function createContent(){
                 </div>
             </div>`
         )
-        div.append(`<div> ${item.likes} Likes </div>`);
-        div.append(`<p> <b> ${item.username}</b> ${item.caption} </p>`);
-        div.append(`<div style='color:gray'> View All Comments </div>`)
-        div.append(`<div style='color:gray'> ${item.date} </div>`)
+        div.append(`<div class="postContent">
+                        <div> ${item.likes} Likes </div>
+                        <p class="caption"> <b> ${item.username}</b> ${item.caption} </p>
+                        <div style='color:gray'> View All Comments </div>
+                        <div style='color:gray'> ${item.date} </div>
+                    </div>`);
         container.append(div);
+        var imgWidth = $('.postImage').width();
+        $('.action-bar').width(imgWidth);
+        $('.postContent').width(imgWidth);
     });
 }
 
