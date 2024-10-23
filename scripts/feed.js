@@ -63,8 +63,11 @@ function shuffle(array) {
 // stored up above. Uses JQuery
 function createContent(){
     let container = $('.main-content');
-    let shuffleContent = shuffle(contentData);
-    $.each(shuffleContent, function(index, item){
+
+    // Use below only if you want to randomize order of the data every
+    // time this function is called
+    // let shuffleContent = shuffle(contentData);
+    $.each(contentData, function(index, item){
         let div = $("<div>").addClass("content-element");
         if(item.verified == true){
             div.append(`<h4> <img src="${item.userimg}" alt="profileimg.jpg" class="profileImage"> ${item.username} <i class="bi bi-patch-check-fill text-verified"></i> </h4>`);
@@ -92,4 +95,52 @@ function createContent(){
         container.append(div);
     });
 }
+
+function randomBoolean(){
+    let chance = Math.random();
+    if(chance >= .5){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+
+
+function addImages(){
+
+    let name;
+        $.ajax({
+            url: 'https://randomuser.me/api/',
+            dataType: 'json',
+            success: function(data) {
+              name = data.results[0].name.first + ' ' +data.results[0].name.last;
+
+              const img = new Image();
+              const profileImage = new Image();
+              const random = Math.floor(Math.random() * 10000);
+              const random2 = Math.floor(Math.random() * 5000);
+              img.src = `https://loremflickr.com/200/200?random=${random}`;
+              profileImage.src = `https://loremflickr.com/200/200?random=${random2}`;
+              let likeNum = Math.floor(Math.random() * 10000)
+                  let newObject = 
+                  {
+                      username: name,
+                      userimg: profileImage.src,
+                      imgSrc: img.src,
+                      likes: likeNum,
+                      caption: 'Lorem Ipsum',
+                      date: '01/02/2024',
+                      verified: randomBoolean()
+                  }
+                  contentData.push(newObject);
+                  let container = $('.main-content');
+                  container.empty();
+                  createContent();
+            }
+          });
+
+}
+
 createContent();
