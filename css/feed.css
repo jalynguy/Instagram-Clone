@@ -112,12 +112,6 @@ body{
     flex-wrap: wrap;
 }
 
-.caption{
-    display: flex; 
-    flex-wrap: wrap;
-    overflow-wrap: break-word;
-    width: 50%;
-}
 
 /* Footer Styling */
 

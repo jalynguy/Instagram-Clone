@@ -89,7 +89,7 @@ function createContent(){
             </div>`
         )
         div.append(`<div> ${item.likes} Likes </div>`);
-        div.append(`<p class="caption"> <b> ${item.username} </b> ${item.caption} </p>`);
+        div.append(`<p> <b> ${item.username}</b> ${item.caption} </p>`);
         div.append(`<div style='color:gray'> View All Comments </div>`)
         div.append(`<div style='color:gray'> ${item.date} </div>`)
         container.append(div);
