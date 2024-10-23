@@ -4,12 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/landing.css" />
     <title>Multigram</title>
   </head>
   <body>
-    <h1>Landing Page</h1>
-
-    <script src="script.js"></script>
+    <div class="login" id="login">
+      <h1> Instagram</h1>
+      <form action="" method="">
+        <div class="input-row">
+            <label for="username"></label>
+            <input type="text" placeholder="Enter Username" id="username"/>
+        </div>
+        <div class="input-row">
+          <label for="password"></label>
+          <input type="password" placeholder="Enter Password" id="password"/>
+        </div>
+        <div class="input-row">
+          <button type="submit" class="submit" onclick="login(event)"> Log In </button>
+        </div>
+      </form>
+      <div class = "seperator"> ------------------------    Or    ------------------------ </div>
+      <br/>
+      <div class="loginHelp">
+        <h3 class="altLogin"> <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F" > <img src="assets/readmeImages/fblogo.png" alt="fblogo.png"></img> Login with Facebook </a> </h3>
+        <div class="forgotPassword"> <a href=""> Forgot Password? </a> </div>
+      </div>
+    </div>
+    <script src="scripts/landing.js"></script>
   </body>
 </html>
