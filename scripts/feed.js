@@ -111,6 +111,7 @@ function randomBoolean(){
 function addImages(){
 
     let name;
+    for( let i = 0 ; i < 5; i++){
         $.ajax({
             url: 'https://randomuser.me/api/',
             dataType: 'json',
@@ -140,6 +141,7 @@ function addImages(){
                   createContent();
             }
           });
+        }
 
 }
 
