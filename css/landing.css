@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "InstagramFont";
+    src: url("/Fonts/InstagramFont.ttf");
+}
+
+html, body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    border: 1px solid black;
+    padding: 100px;
+    margin-top: 50%;
+}
+
+.login h1{
+    font-family: "InstagramFont", sans-serif;
+}
+
+.login .input-row{
+    width: 100%;
+    padding-top: 20px;
+}
+
+.login input{
+    border-radius: 5px;
+    height: 25px;
+    width: 100%;
+    padding-left: 5%;
+}
+
+.login .submit{
+    width: 107%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(91, 203, 255);
+    background-color: rgb(91, 203, 255);
+    color: white;
+    font-family: "sans-serif";
+    font-weight: bold;
+}
+
+.login .submit:hover{
+    background-color: lightblue;
+    transition: 0.1s;
+}
+
+.login form{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    width: 100%;
+}
+
+.seperator{
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.altLogin{
+    color: rgb(66 103 178);
+    text-align: center;
+    display: flex;
+    padding: 10px;
+}
+
+.altLogin img{
+    width: 25px;
+    height: 25px;
+    padding-right: 10px;
+}
+
+.forgotPassword{
+    color: rgb(66 103 178);
+    text-align: center;
+}
