@@ -67,6 +67,8 @@ body{
     color:white;
     background-color: black;
     margin-bottom: 50px;
+    justify-content: center;
+    width: 75%;
  }
 
  .content-element h4{
@@ -83,10 +85,12 @@ body{
 }
 
  .content-element img{
-    width: 50vw;
+    width: 100%;
     height: 100%;
     margin-bottom: 10px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
  }
 
  /* Action Elements underneath image in content */
@@ -105,6 +109,14 @@ body{
 .action-items-2{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.caption{
+    display: flex; 
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    width: 50%;
 }
 
 /* Footer Styling */

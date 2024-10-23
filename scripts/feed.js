@@ -89,7 +89,7 @@ function createContent(){
             </div>`
         )
         div.append(`<div> ${item.likes} Likes </div>`);
-        div.append(`<p> <b> ${item.username} </b> ${item.caption} </p>`);
+        div.append(`<p class="caption"> <b> ${item.username} </b> ${item.caption} </p>`);
         div.append(`<div style='color:gray'> View All Comments </div>`)
         div.append(`<div style='color:gray'> ${item.date} </div>`)
         container.append(div);
@@ -106,11 +106,14 @@ function randomBoolean(){
     }
 }
 
-
+function randomDate(start, end){
+    return new Date(start.getTime() + Math.random() * (end.getTime()- start.getTime()));
+}
 
 function addImages(){
 
     let name;
+    let quote;
     for( let i = 0 ; i < 5; i++){
         $.ajax({
             url: 'https://randomuser.me/api/',
@@ -118,27 +121,33 @@ function addImages(){
             success: function(data) {
               name = data.results[0].name.first + ' ' +data.results[0].name.last;
 
-              const img = new Image();
-              const profileImage = new Image();
-              const random = Math.floor(Math.random() * 10000);
-              const random2 = Math.floor(Math.random() * 5000);
-              img.src = `https://loremflickr.com/200/200?random=${random}`;
-              profileImage.src = `https://loremflickr.com/200/200?random=${random2}`;
-              let likeNum = Math.floor(Math.random() * 10000)
-                  let newObject = 
-                  {
-                      username: name,
-                      userimg: profileImage.src,
-                      imgSrc: img.src,
-                      likes: likeNum,
-                      caption: 'Lorem Ipsum',
-                      date: '01/02/2024',
-                      verified: randomBoolean()
-                  }
-                  contentData.push(newObject);
-                  let container = $('.main-content');
-                  container.empty();
-                  createContent();
+              fetch('https://dummyjson.com/quotes/random')
+              .then(res => res.json())
+              .then(data => {
+                quote = data.quote;
+                const img = new Image();
+                const profileImage = new Image();
+                const random = Math.floor(Math.random() * 10000);
+                const random2 = Math.floor(Math.random() * 5000);
+                img.src = `https://loremflickr.com/200/200?random=${random}`;
+                profileImage.src = `https://loremflickr.com/200/200?random=${random2}`;
+                let likeNum = Math.floor(Math.random() * 10000)
+                    let newObject = 
+                    {
+                        username: name,
+                        userimg: profileImage.src,
+                        imgSrc: img.src,
+                        likes: likeNum,
+                        caption: quote,
+                        date: randomDate(new Date(2022, 0, 1), new Date()),
+                        verified: randomBoolean()
+                    }
+                    contentData.push(newObject);
+                    let container = $('.main-content');
+                    container.empty();
+                    createContent();
+              });              
+
             }
           });
         }
