@@ -59,6 +59,7 @@ function shuffle(array) {
     return array;
   }
 
+
 // Dymamically Create Content for page via the JSON data
 // stored up above. Uses JQuery
 function createContent(){
@@ -154,4 +155,5 @@ function addImages(){
 
 }
 
-createContent();
+createContent()
+

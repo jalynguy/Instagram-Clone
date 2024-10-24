@@ -6,9 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Multigram</title>
+    <link rel="stylesheet" href="css/account.css">
+    <script src="scripts/account.js" defer></script>
   </head>
   <body>
-    <h1>Account Page</h1>
+    <nav>
+      <a href="feed.html">&larr; Back to Feed</a>
+  </nav>
+
+    <div class="profile-container">
+      <header>
+        <div class="profile-header">
+       <div class="profile-img"></div>
+           
+          <div class="profile-info">
+            <h1 class="username">username</h1>
+            <button class="edit-profile">Edit Profile</button>
+          </div>
+        </div>
+        <div class="profile-stats">
+          <div class="stat">
+            <span class="number">100</span>
+            <span class="label">Posts</span>
+          </div>
+          <div class="stat">
+            <span class="number">200</span>
+            <span class="label">Followers</span>
+          </div>
+          <div class="stat">
+            <span class="number">180</span>
+            <span class="label">Following</span>
+          </div>
+        </div>
+        <div class="bio">
+          <p><strong>Full Name</strong></p>
+          <p>This is a sample bio text. 📷✈️🏖️</p>
+        </div>
+      </header>
+  
+      <div id="posts">
+      </div>
+    </div>
+  
+  </body>
 
     <script src="script.js"></script>
   </body>
