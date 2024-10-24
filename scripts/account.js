@@ -6,7 +6,6 @@ let numberOfPosts = Math.floor(Math.random() * 48);
 
 followers.innerHTML = numberOfPosts;
 
-//     profileHeader.insertBefore(profilePic, profileHeader.querySelector('.profile-info'));
 
 function getImg(classToAdd, container) {
     let img = new Image();
